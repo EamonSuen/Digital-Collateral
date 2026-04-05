@@ -1,17 +1,62 @@
 \section{Model}
 
-\begin{frame}{Baseline Setup}
+\begin{frame}[allowframebreaks]{模型核心设定与 $(\kappa, \lambda)$ 分离}
+两期模型，家庭在 date 0 决定是否接受贷款合约 $(d, p)$，在 date 1 决定是否还款。
+
+\medskip
+家庭面临两种不确定性：对商品的价值评价 $\tilde{v}_i$（私人信息）和收入冲击概率 $q_i$（风险类型）。
+  
+\medskip
+
+\begin{block}{关键}
+  传统模型（Kiyotaki-Moore 1997）用单一参数刻画抵押品，回收价值和激励效果不可分离。本文将抵押品技术参数化为 $(\kappa, \lambda)$：
   \begin{itemize}
-    \item Define the main agents, choices, and constraints.
-    \item State the key assumptions clearly.
-    \item Highlight the economic mechanism in one sentence.
+    \item $\kappa$（回收效率）：贷款人在违约后能回收的价值比例。传统担保 $\kappa > 0$；数字担保 $\kappa \approx 0$。
+    \item $\lambda$（锁定效力）：违约后借款人只能享受 $(1-\lambda)$ 比例的使用价值。无担保 $\lambda = 0$；完美锁定 $\lambda = 1$。
+    \item \colorbox{yellow!40}{数字抵押品的本质:}贷款人几乎收不回任何东西（$\kappa \approx 0$），但借款人的违约代价依然很高（$\lambda$ 接近 1）。
   \end{itemize}
+  \end{block}
+
+  \input{tables/kappa_vs_lambda.tex}
+
+  Assunção, Benmelech \& Silva (2014) 发现巴西简化汽车回收程序后信贷扩张但违约率上升；本文中数字锁定增强后信贷扩张且违约率下降。
 \end{frame}
 
-\begin{frame}{Core Equations}
-  \begin{align*}
-    Y_t &= C_t + I_t + G_t + NX_t, \\
-    C_t &= \alpha + \beta Y_t, \\
-    \max_{x_t} \quad & \mathbb{E}_0 \sum_{t=0}^{\infty} \delta^t u(x_t)
-  \end{align*}
+\begin{frame}[allowframebreaks]{两个核心命题：道德风险与逆向选择}
+    
+    \textbf{Date 1 的还款决策}：
+    \begin{itemize}
+        \item \textbf{还款}：支付 $p$，保留完整的设备服务价值，净效用为 $v_i - p$。
+        \item \textbf{违约（被锁定）}：不支付 $p$，设备被远程锁定，只能享受 $(1-\lambda)$ 比例的残余价值，效用为 $(1-\lambda)v_i$。
+    \end{itemize}
+    $\Rightarrow$ \textbf{还款条件}：$v_i - p \geq (1-\lambda)v_i$，即 $\lambda v_i \geq p$。
+    
+    \vspace{0.5em}
+    
+    \begin{block}{Proposition 1：道德风险降低}
+        $\lambda$ 越高，\textbf{战略性违约}的概率越低。\\
+        \small{机制：不还款意味着失去 $\lambda v_i$ 的服务价值，有能力还款的家庭更倾向于履约。}
+    \end{block}
+    
+    \begin{block}{Proposition 2：逆向选择减轻（正向筛选）}
+        存在关于 $\lambda$ 递减的风险阈值 $q_\lambda$，仅 $q_i \leq q_\lambda$ 的家庭接受贷款。\\
+        \small{机制：高风险家庭预期被锁定概率更高，担保贷款吸引力降低。}
+    \end{block}
+    
+    \vspace{0.5em}
+    
+    \begin{itemize}
+        \setlength{\itemsep}{4pt}
+        \item \textbf{实验映射}：上述两个渠道的分离，直接对应实验中三组比较的识别逻辑。
+        \item \textbf{福利的非单调性}：更强的锁定技术不一定提高福利。
+        \begin{itemize}
+            \item \textit{权衡}：提高 $\lambda$ 会扩大信贷供给，但在非战略性违约（收入冲击）时也会摧毁更多剩余（高风险家庭受害最深）。
+            \item \textit{结论}：\textbf{中等程度的 $\lambda$} 可能是福利最优的，这与 PAYGO 实践中相对宽松的锁定政策一致。
+        \end{itemize}
+    \end{itemize}
+
+    \begin{exampleblock}{问题4：}
+      逆向选择和道德风险有什么区别和联系？
+    \end{exampleblock}
+    
 \end{frame}

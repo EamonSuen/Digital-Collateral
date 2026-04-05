@@ -12,7 +12,6 @@
 \usepackage{colortbl}       % \rowcolor in tables
 \usepackage{listings}       % code listings
 \usepackage{ccicons}    % Creative Commons icons
-
 % listings global style
 \lstset{
   basicstyle   = \ttfamily\scriptsize,
@@ -33,8 +32,7 @@
 
 \usepackage[
   backend=biber,
-  style=authoryear,
-  sorting=nyt
+  style=apa
 ]{biblatex}
 
 \addbibresource{references.bib}
@@ -93,10 +91,10 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{caption}[numbered]
 
-\title{Universal Academic Beamer Template}
-\subtitle{A Reusable Structure for Research Presentations}
-\author[Your Name]{Your Name}
-\institute[Your University]{Your Department, Your University, \texttt{your.email@example.com}}
+\title{Digital Collateral}
+\subtitle{数字抵押品 --- 来自乌干达的自然实验证据}
+\author[孙翊铭]{孙翊铭}
+\institute[吉林大学]{经济学院金融系, 吉林大学 \\ \texttt{sunym25@mails.jlu.edu.cn}}
 \date{\today}
 
 \AtBeginSection[]
@@ -121,7 +119,7 @@
 \end{frame}
 
 \input{sections/01_intro}
-\input{sections/02_background}
+\input{sections/02_Literature-Context}
 \input{sections/03_model}
 \input{sections/04_empirics}
 \input{sections/05_conclusion}
@@ -130,7 +128,7 @@
 
 % ---- 样例库 ----
 % 取消下一行注释即可将幻灯片样例库编译进文档（仅供参考，不计入正文页码）：
-\input{sections/00_slide_gallery}
+%\input{sections/00_slide_gallery}
 
 \begin{frame}[allowframebreaks]{References}
   \printbibliography

@@ -1,23 +1,117 @@
 \section{Introduction}
 
-\begin{frame}{Research Question}
+\begin{frame}{文献简介}
   \begin{itemize}
-    \item What is the core question addressed by this presentation?
-    \item Why is the question important for theory, policy, or practice?
-    \item What is the main contribution relative to existing work?
+    \item 标题：Digital Collateral
+    \item 作者：Paul Gertler (UC Berkeley), Brett Green (Wash U), Catherine Wolfram (MIT Sloan)
+    \item 期刊：\textit{The Quarterly Journal of Economics} (Top 5)
+    \item 年份：2024
+    \item \cite{gertler2024DigitalCollateral}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Motivation}
-  \begin{columns}[T]
-    \column{0.55\textwidth}
+\begin{frame}[allowframebreaks]{Motivation}
+  \begin{block}{核心问题}
+    \textbf{抵押品（collateral）是信贷市场的基石——但在发展中国家，传统抵押品为什么不好用？}
+  \end{block}
+
+ \medskip
+
+  \begin{block}{供给侧的障碍}
+  \begin{itemize}
+    \item 弱法治环境下产权难以界定和执行
+    \item 物理回收成本极高——偏远地区的借款人很难被找到，找到之后资产可能已经损坏或转移
+    
+    \begin{itemize}
+      \item 美国超过80\%的家庭债务有物理资产担保
+      \item 我们的初步调查显示，只有 30\% 的家庭贷款以实际资产（如房屋、土地、牲畜或车辆）为抵押。 
+      \item 乌干达“透明定价倡议”的数据显示，在 2011-2014 年期间，仅 16\% 的贷款产品明确提及使用抵押品。 
+      \item Elum 和 Kanu (2018) 的调查发现，尼日利亚 47\% 的农民认为抵押品是获得正式信贷的主要障碍。
+    \end{itemize}
+  \end{itemize}
+  \end{block}
+
+ \medskip
+
+  \begin{block}{需求侧的障碍}
+  \begin{itemize}
+    \item 许多中低收入国家家庭的主要收入来源是自营职业,这比正规部门的工资更容易受到频繁冲击。
+    \item 这些缺乏储蓄的家庭更可能因非策略性原因违约,  并可能选择避免资产被收回的风险。
+  \end{itemize}
+\end{block}
+  \medskip
+
+  \begin{block}{传统抵押品在LMIC的现实困境}
+  回收成本高（$\kappa$ 低）、借款人面临永久丧失资产的风险 $\to$ 担保债务的普及程度极低
+  \end{block}
+\end{frame}
+
+\begin{frame}{数字抵押品 --- 一种新的解法}
+  \begin{block}{核心创新}
+  \textbf{lockout technology（锁定技术）}
+  
+
+  \begin{itemize}
+    \item 贷款人可以\textbf{远程禁用}资产的服务流（flow of services），而无需物理回收
+    \item 禁用成本极低、可逆，即借款人补缴后立即恢复使用
+    \item 典型应用场景：Pay-As-You-Go（PAYGO）模式：小额首付 → 取得资产 → 通过移动支付分期还款 → 逾期即锁定 → 补缴即解锁
+  \end{itemize}
+
+  \end{block}
+
+  \begin{block}{传统抵押品的双重功能}
+    \begin{itemize}
+        \item 贷款方能回收有价值资产，从而规避违约风险
+        \item 借款家庭将面临价值损失，这既激励其履行还款义务，也促使预期违约者主动拒绝贷款
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{数字抵押品的应用谱系——为什么这和"数字金融"有关}
+  这不仅是一个发展经济学的故事，更是数字技术重塑金融合约基础设施的典型案例。
+
+  \begin{block}{已有的应用场景}
+    \begin{itemize}
+      \item 太阳能家庭系统 (SHS)：Fenix International（乌干达），本文实验对象
+      \item 公用事业：TELMEX（墨西哥电信）用网络服务作为数字抵押品为电脑设备贷款提供担保
+      \item 汽车贷款：美国已在次级汽车贷款领域应用了类似技术——超过两百万辆汽车安装了"启动阻断装置"，当借款人未按时还款时，贷款方可远程禁用车辆启动功能。
+    \end{itemize}
+  \end{block}
+  
+\medskip
+
+  \begin{block}{中国场景的类比}
+    \begin{itemize}
+      \item 共享充电宝/共享单车的信用免押机制
+      \item 手机分期的锁机技术（如趣分期早期模式，尽管该模式引发了较大的舆论争议） %TODO 验证这一说法
+      \item 芝麻信用的"信用即服务"逻辑
+      \item 社会信用体系下的失信联合惩戒
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{问题}
+    \begin{exampleblock}{问题1：}
+    \textbf{数字抵押与传统抵押的关键区别}
+    \end{exampleblock}
+  \input{tables/digital-vs-traditional.tex}
+
+  
+   \begin{exampleblock}{问题2：}
+      \textbf{乌干达的当地百姓在使用数字抵押品获得抵押贷款后，这笔资金被用在了什么地方？}
+    \end{exampleblock}
+
+    \medskip
+
+   \begin{exampleblock}{问题3：}
+      \textbf{这样的数字抵押品“好”还是“不好”？}
       \begin{itemize}
-        \item Use this slide to explain the real-world background.
-        \item Keep each bullet short and presentation-oriented.
-        \item Move technical details to later sections.
+        \item 是否有助于还款义务的履行？
+        \item 是否会恶化家庭的资产负债表？
+        \item 数字担保贷款是否构成一个可持续的（profitable）均衡合约？ %TODO 搞懂什么是可持续的（profitable）均衡合约
+        \item 是否改善了福利水平？
       \end{itemize}
-    \column{0.45\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{figures/example-diagram.pdf}
-  \end{columns}
+      
+      
+  \end{exampleblock}
 \end{frame}
