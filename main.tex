@@ -28,6 +28,17 @@
   showstringspaces = false,
 }
 \usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,        % true: 字体着色; false: 使用方框
+    linkcolor=blue,        % 内部链接颜色 (公式、图表引用) -> 建议用 black 或 blue
+    citecolor=blue,        % 参考文献引用颜色 -> 建议用 black 或 blue
+    urlcolor=blue,          % 网址链接颜色
+    bookmarks=true,         % 生成 PDF 书签
+    bookmarksnumbered=true, % 书签中显示章节编号
+    pdftitle={Digital Collateral}, % PDF 文件属性中的标题
+    pdfauthor={孙翊铭-吉林大学}     % PDF 文件属性中的作者
+}
 \usepackage{appendixnumberbeamer}
 
 \usepackage[
@@ -105,7 +116,7 @@
 \subtitle{数字抵押品 --- 来自乌干达的自然实验证据}
 \author[孙翊铭]{孙翊铭}
 \institute[吉林大学]{经济学院金融系, 吉林大学 \\ \texttt{sunym25@mails.jlu.edu.cn}}
-\date{\today}
+\date{\number\year 年 \number\month 月}
 
 \AtBeginSection[]
 {
