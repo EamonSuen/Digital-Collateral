@@ -9,7 +9,7 @@
 \medskip
 
 \begin{block}{关键}
-  传统模型（Kiyotaki-Moore 1997）用单一参数刻画抵押品，回收价值和激励效果不可分离。本文将抵押品技术参数化为 $(\kappa, \lambda)$：
+  传统模型（\textcite{kiyotaki1997credit}）用单一参数刻画抵押品，回收价值和激励效果不可分离。本文将抵押品技术参数化为 $(\kappa, \lambda)$：
   \begin{itemize}
     \item $\kappa$（回收效率）：贷款人在违约后能回收的价值比例。传统担保 $\kappa > 0$；数字担保 $\kappa \approx 0$。
     \item $\lambda$（锁定效力）：违约后借款人只能享受 $(1-\lambda)$ 比例的使用价值。无担保 $\lambda = 0$；完美锁定 $\lambda = 1$。
@@ -19,11 +19,21 @@
 
   \input{tables/kappa_vs_lambda.tex}
 
-  Assunção, Benmelech \& Silva (2014) 发现巴西简化汽车回收程序后信贷扩张但违约率上升；本文中数字锁定增强后信贷扩张且违约率下降。
+  \textcite{assuncao2014repossession} 发现巴西简化汽车回收程序后信贷扩张但违约率上升；本文中数字锁定增强后信贷扩张且违约率下降。
 \end{frame}
 
 \begin{frame}[allowframebreaks]{两个核心命题：道德风险与逆向选择}
+
+    \begin{questionblock}
+      逆向选择和道德风险有什么区别和联系？
+    \end{questionblock}
+
+    \begin{block}{道德风险 vs. 逆向选择}
+       \input{tables/adverse-selection-vs-moral-hazard.tex}
+    \end{block}
     
+    \newpage
+
     \textbf{Date 1 的还款决策}：
     \begin{itemize}
         \item \textbf{还款}：支付 $p$，保留完整的设备服务价值，净效用为 $v_i - p$。
@@ -55,8 +65,24 @@
         \end{itemize}
     \end{itemize}
 
-    \begin{exampleblock}{问题4：}
-      逆向选择和道德风险有什么区别和联系？
-    \end{exampleblock}
+
     
 \end{frame}
+
+
+% \begin{frame}{两个可检验的异质性预测}
+%   \begin{block}{Proposition 5：设备价值的异质性}
+%     设备价值越高的家庭，\textbf{接受率更低}，且\textbf{道德风险效应}和\textbf{逆向选择效应}都更大。
+%   \end{block}
+
+%   \medskip
+
+%   \begin{block}{Proposition 6：延续价值的异质性}
+%     延续价值越高的家庭占比越大，道德风险效应越小。
+%   \end{block}
+
+%   \medskip
+
+%   \small
+%   这里的“延续价值”指借款人按时还清这笔贷款后，能从与贷款人的持续关系中获得的未来收益。若这部分收益足够高，这些家庭即使没有锁定惩罚，也更倾向于主动还款。
+% \end{frame}

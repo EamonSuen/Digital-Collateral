@@ -1,21 +1,86 @@
 \section{Empirics}
 
-\begin{frame}{Empirical Design}
+\begin{frame}{实验背景: Fenix International 与乌干达}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{合作伙伴与 SHS}
+        \small
+        Fenix International 是乌干达最大的太阳能家庭系统（SHS）供应商。
+        \begin{itemize}
+          \item 主力产品: 10 瓦系统，可为 LED 灯、收音机、手机充电
+          \item PAYGO 模式: 首付 \$5--\$10 $\rightarrow$ 移动支付分期 $\rightarrow$ 逾期锁定 $\rightarrow$ 补缴解锁
+          \item 实践中物理回收极少发生: 仅少于 5\% 的违约会走到物理回收
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{实验产品: 300{,}000 UGX 学费贷款}
+        \small
+        \begin{itemize}
+          \item 规模约 \$81，占家庭年收入约 6\%，占家庭总借贷约 25\%
+          \item 申请时需先缴纳 50{,}000 UGX（约 \$13）保证金
+          \item 还款安排: 7 天免息期 + 100 天 $\times$ 每天 3{,}000 UGX
+          \item 中位 APR 约 92\%，与乌干达小额贷款利率大致一致
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{随机化设计: 四组对照}
+  \begin{columns}[T]
+    \begin{column}{0.53\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{figures/随机化设计.png}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \scriptsize
+      \begin{block}{样本起点}
+        Fenix 向 27{,}081 名已还清 SHS 贷款的客户发送短信，3{,}300 人（12\%）回复有意向。
+      \end{block}
+
+      \begin{block}{四组分配}
+        \begin{itemize}
+          \setlength{\itemsep}{2pt}
+          \item 控制组: 619 人，不主动联系，不提供贷款
+          \item 无担保组: 分配 1{,}002 人，成功联系 855 人，最终接受 438 人，接受率 51\%
+          \item 惊喜无担保组: 821 人，先被告知需抵押，交保证金后告知其实不用，最终接受 376 人，接受率 46\%
+          \item 真正担保组: 498 人，全程都需抵押，最终接受 217 人，接受率 44\%
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{识别策略的直觉图示}
+  \input{tables/identification-logic.tex}
+
+  \scriptsize
+  惊喜无担保组在\textbf{筛选阶段}模仿 Secured，在\textbf{还款阶段}模仿 Unsecured，因此能把“谁会借”和“借后是否还”拆开。
+
+  \medskip
+
+  \textcite{karlan2009observing} 的分解思路是：
   \begin{itemize}
-    \item Introduce data, sample, and identification strategy.
-    \item Explain the main specification in plain language.
-    \item Reserve robustness details for appendix slides.
+    \item \textbf{总效应} = Secured vs. Unsecured
+    \item \textbf{道德风险} = Secured vs. Surprise Unsecured
+    \item \textbf{逆向选择} = Surprise Unsecured vs. Unsecured。
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Main Results}
-  \input{tables/example-table}
+\begin{frame}{主要结果 I: 筛选、还款与盈利性}
+  \input{tables/main-results-summary.tex}
+
+  \scriptsize
+  这组结果说明，数字抵押一方面让一部分高违约风险家庭在事前退出，另一方面提高了进入样本家庭在事后的履约激励。结果是贷款人能向更多家庭\textbf{盈利性地}提供信贷。
+
+  \medskip
+  \scriptsize 数据与估计结果来自 \cite{gertler2024DigitalCollateral}。
 \end{frame}
 
-\begin{frame}{Interpretation}
-  \begin{itemize}
-    \item State the sign, magnitude, and economic meaning.
-    \item Compare the results to your priors and the literature.
-    \item Flag the most relevant limitation if needed.
-  \end{itemize}
+\begin{frame}{主要结果 II: 教育与资产负债表}
+  \input{tables/education-balance-sheet.tex}
+
+  \scriptsize
+  贷款处理显著提高了入学率和学校相关支出，但没有发现家庭资产负债表明显恶化。这说明实验识别出的，不只是“还得更多”，还有真实的人力资本投资改善。
 \end{frame}

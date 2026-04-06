@@ -91,6 +91,15 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{caption}[numbered]
 
+% 问题块
+\newcounter{questionblock}
+\newenvironment{questionblock}[1][]{
+  \refstepcounter{questionblock}
+  \begin{exampleblock}{问题\arabic{questionblock}：#1}
+}{
+  \end{exampleblock}
+}
+
 \title{Digital Collateral}
 \subtitle{数字抵押品 --- 来自乌干达的自然实验证据}
 \author[孙翊铭]{孙翊铭}
@@ -100,9 +109,7 @@
 \AtBeginSection[]
 {
   \begin{frame}{Outline}
-    \begin{multicols}{2}
       \tableofcontents[currentsection]
-    \end{multicols}
   \end{frame}
 }
 
@@ -113,9 +120,7 @@
 \end{frame}
 
 \begin{frame}{Outline}
-  \begin{multicols}{2}
     \tableofcontents
-  \end{multicols}
 \end{frame}
 
 \input{sections/01_intro}
@@ -123,8 +128,8 @@
 \input{sections/03_model}
 \input{sections/04_empirics}
 \input{sections/05_conclusion}
-\appendix
-\input{sections/99_appendix}
+%\appendix
+%\input{sections/99_appendix}
 
 % ---- 样例库 ----
 % 取消下一行注释即可将幻灯片样例库编译进文档（仅供参考，不计入正文页码）：
